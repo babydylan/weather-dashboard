@@ -7,6 +7,7 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -21,16 +22,19 @@
             <div class="col-lg-4">
                 <h4>Search for a city:</h4>
                 <!-- insert search bar -->
-                <ul class="list-group city-l">
-                    <button type="button" class="list-group-item list-group-item-action">
-                        Dapibus ac facilisis in
-                    </button>
-                    <button type="button" class="list-group-item list-group-item-action">
-                        Morbi leo risus
-                    </button>
-                    <button type="button" class="list-group-item list-group-item-action">
-                        Porta ac consectetur ac
-                    </button>
+                <form id="search-form">
+                    <div class="form-group">
+                        <label for="search-input">Search for a city</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="search-input" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <ul class="list-group city city-list">
+                    
                 </ul>
             </div>
 
@@ -38,10 +42,11 @@
                 
                 <div class="card" style="width: 50rem;">
                     <div class="card-body">
-                        <h3 class="card-title">Card title</h3>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h3 class="card-title city-name weather-icon">-- City --</h3>
+                        <p class="card-text temp">Temperature: --</p>
+                        <p class="card-text humidity">Humidity: --</p>
+                        <p class="card-text wind-speed">Wind Speed: --</p>
+                        <p class="card-text uv-index">UV Index: --</p>
                     </div>
                 </div>
 
@@ -50,68 +55,66 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-lg-1">
-
-                    </div>
+                    <div class="col-lg-1"></div>
 
                     <div class="col-lg-2 smcard">
                         <div class="card" style="width: 9rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
+                                <div class="weather-icon"></div>
+                                <h5 class="card-title sm-date">Date</h5>
+                                <p class="card-text sm-temp">Temp:</p>
+                                <p class="card-text sm-humidity">Humidity:</p>
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="col-lg-2 smcard">
                         <div class="card" style="width: 9rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
+                                <div class="weather-icon"></div>
+                                <h5 class="card-title sm-date">Date</h5>
+                                <p class="card-text sm-temp">Temp:</p>
+                                <p class="card-text sm-humidity">Humidity:</p>
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="col-lg-2 smcard">
                         <div class="card" style="width: 9rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
+                                <div class="weather-icon"></div>
+                                <h5 class="card-title sm-date">Date</h5>
+                                <p class="card-text sm-temp">Temp:</p>
+                                <p class="card-text sm-humidity">Humidity:</p>
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="col-lg-2 smcard">
                         <div class="card" style="width: 9rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
+                                <div class="weather-icon"></div>
+                                <h5 class="card-title sm-date">Date</h5>
+                                <p class="card-text sm-temp">Temp:</p>
+                                <p class="card-text sm-humidity">Humidity:</p>
                             </div>
                         </div>
                     </div>
+ 
+                    <div class="col-lg-2 smcard">
+                        <div class="card" style="width: 9rem;">
+                            <div class="card-body">
+                                <div class="weather-icon"></div>
+                                <h5 class="card-title sm-date">Date</h5>
+                                <p class="card-text sm-temp">Temp:</p>
+                                <p class="card-text sm-humidity">Humidity:</p>
+                            </div>
+                        </div>
+                    </div>
+ 
                     
-                    <div class="col-lg-2 smcard">
-                        <div class="card" style="width: 9rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">9/22/2020</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-1">
-
-                    </div>
+                    <div class="col-lg-1"></div>
 
                 </div>
             </div>
