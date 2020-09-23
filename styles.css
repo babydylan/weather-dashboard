@@ -2,6 +2,18 @@
 text-align: center;
 color: #fff;
 background-color: #333;
-padding: 20px;
+padding: 10px;
 }
 
+.current-temp {
+width: 50rem;
+}
+
+
+.float-right {
+float: right;
+}
+
+.float-left {
+float: left;
+}
