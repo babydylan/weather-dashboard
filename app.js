@@ -38,48 +38,48 @@ $(function () {
         });
     };
 
-    // function fetchFiveDay(city) {
-    //     var fiveDayUrl =
-    //         "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + apiKey;
+    function fetchFiveDay(city) {
+        var fiveDayUrl =
+            "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + apiKey;
 
-    //     // var iconUrl =
-    //     //     "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
+        // var iconUrl =
+        //     "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
 
-    //     // var iconImg = $("<img>").attr({
-    //     //     src: iconUrl,
-    //     //     alt: data.weather[0].description,
-    //     // });
+        // var iconImg = $("<img>").attr({
+        //     src: iconUrl,
+        //     alt: data.weather[0].description,
+        // });
         
-    //     $.ajax({
-    //          url: fiveDayUrl,
-    //         method: "GET",
-    //     }).then(function (response) {
-    //         console.log(response);
+        $.ajax({
+             url: fiveDayUrl,
+            method: "GET",
+        }).then(function (response) {
+            console.log(response);
         
-    //     for (var i = 3; i < response.list.length; i + 8) {
-    //       var pre5Row = $(".preview");
-    //       pre5Row.attr("style", "display: none;")
-    //       var row5 = $(".forecast-5");
-    //       var divCol = $("<div>").addClass("col-lg-2 smcard");
-    //       divCol.attr("style", "width: 9rem;");
-    //       row5.append(divCol);
-    //       var card = $("<div>").addClass("card");
-    //       card.attr("style", "width: 18rem;");
-    //       divCol.append(card);
-    //       var  cardBod = $("<div>").addClass("card-body").appendTo(card);
-    //     //var weatherIcn =$("<div>").addClass("sm-weather-icon").appendTo(cardBod);
-    //     //var smDate =$("<h5>").addClass("card-title sm-date").appendTo(cardBod);
-    //       var  smTemp =$("<p>").addClass("card-text sm-temp").appendTo(cardBod);
-    //       var  smHumid =$("<p>").addClass("card-text sm-humidity").appendTo(cardBod);
-    //       smHumid.text(response.list.length);
-    //       smTemp.text("Temp: " + response.list[i].main.temp + "°F");
-    //       smHumid.text("Humidity: " + response.list[i].humidity + "%");
+        for (var i = 3; i < response.list.length; i += 8) {
+          var pre5Row = $(".preview");
+          pre5Row.attr("style", "display: none;")
+          var row5 = $(".forecast-5");
+          var divCol = $("<div>").addClass("col-lg-2 smcard");
+          divCol.attr("style", "width: 9rem;");
+          row5.append(divCol);
+          var card = $("<div>").addClass("card");
+          card.attr("style", "width: 18rem;");
+          divCol.append(card);
+          var  cardBod = $("<div>").addClass("card-body").appendTo(card);
+        //var weatherIcn =$("<div>").addClass("sm-weather-icon").appendTo(cardBod);
+        //var smDate =$("<h5>").addClass("card-title sm-date").appendTo(cardBod);
+          var  smTemp =$("<p>").addClass("card-text sm-temp").appendTo(cardBod);
+          var  smHumid =$("<p>").addClass("card-text sm-humidity").appendTo(cardBod);
+          smHumid.text(response.list.length);
+          smTemp.text("Temp: " + response.list[i].main.temp + "°F");
+          smHumid.text("Humidity: " + response.list[i].humidity + "%");
             
-    //     };
+        };
 
 
-    //     });
-    // }
+        });
+    }
 
     $(document).on("click", ".city", function () {
 
